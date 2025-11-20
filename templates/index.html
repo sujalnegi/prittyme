@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>prityme-Home</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="sidebar" aria-label="Primary navigation">
+    <button class="logo-box" aria-label="Home" title="Home">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    </button> 
+
+    <!-- spacer pushes links to the bottom -->
+    <div class="nav-spacer" aria-hidden="true"></div>
+
+    <!-- navigation (stacked, bottom-anchored) -->
+    <nav class="nav" aria-label="Secondary">
+      <!-- Background remove -->
+      <button class="nav-btn" aria-label="Background remove" title="Background remove">
+        <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+      </button>
+
+      <!-- Compress image (new) -->
+      <button class="nav-btn" aria-label="Compress image" title="Compress image">
+        <span class="material-icons-outlined" aria-hidden="true">compress</span>
+      </button>
+
+      <!-- Resize -->
+      <button class="nav-btn" aria-label="Resize" title="Resize">
+        <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+      </button>
+
+      <!-- About -->
+      <button class="nav-btn" aria-label="About" title="About">
+        <span class="material-icons-outlined" aria-hidden="true">info</span>
+      </button>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT -->
+<main id="main" class="main-section" role="main">
+
+  <div class="title-area">
+    <h1 class="main-title">Transform Your Photos with AI</h1>
+
+    <!-- Logo under the title -->
+    <img 
+      src="https://github.com/sujalnegi/prittyme/blob/main/static/images/logo.png?raw=1" 
+      alt="PrittyMe Logo" 
+      class="title-logo"
+    >
+
+    <!-- Description -->
+    <p class="title-description">
+      Prityme is your all-in-one AI powered, smart image editor which helps you to compress, resize, remove background, convert formats and add filters to your photos.
+    </p>
+  </div>
+
+</main>
+
+
+  <!-- Keep mouse/key detection for focus styles -->
+  <script>
+    (function () {
+      const body = document.body;
+      function handleMouse() { body.classList.add('using-mouse'); }
+      function handleKey() { body.classList.remove('using-mouse'); }
+      window.addEventListener('mousedown', handleMouse);
+      window.addEventListener('keydown', handleKey);
+    })();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+<p>hackclub ysws</p>
+
+</body>
