@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>prityme - Background Remover</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bg-remove.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a href="/" class="logo-box" aria-label="Home" title="Home">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    </a>
+    <div class="nav-spacer" aria-hidden="true"></div>
+    <nav class="nav" aria-label="Secondary">
+      <a href="/bg-remove" class="nav-btn" aria-label="Background remove" title="Background remove">
+        <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+      </a>
+      <a href="/compress" class="nav-btn" aria-label="Compress image" title="Compress image">
+        <span class="material-icons-outlined" aria-hidden="true">compress</span>
+      </a>
+      <a href="/resize" class="nav-btn" aria-label="Resize" title="Resize">
+        <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+      </a>
+      <a href="/about" class="nav-btn" aria-label="About" title="About">
+        <span class="material-icons-outlined" aria-hidden="true">info</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main-section" role="main">
+    <div class="compress-container">
+      <div>
+        <div class="compress-header">
+          <h2 class="compress-title">AI Background Remover</h2>
+        </div>
+
+        <p class="title-description">Upload or drop an image, select if you want to keep alpha or not, then click on Remove Background.</p>
+
+        <div class="header-actions">
+          <button id="reset" class="btn small" disabled>Reset</button>
+        </div>
+      </div>
+
+      <div class="compress-grid">
+        <div>
+          <div id="drop" class="drop-area" tabindex="0" aria-label="Drop image here or click to choose">
+            <div class="drop-inner" id="dropInner">
+              <p style="margin:0 0 12px 0; color:#d0d0d0">Drop image here or</p>
+              <div style="display:flex;gap:8px;justify-content:center">
+                <label class="btn small" for="fileInput">Choose file</label>
+                <input id="fileInput" class="file-input" type="file" accept="image/*" style="display:none">
+                <span class="meta" id="dropHint">PNG, JPEG, WebP up to 15MB</span>
+              </div>
+            </div>
+            <img id="preview" class="preview" style="display:none" alt="Preview">
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+            <div class="stats">
+              <div class="stat" id="origSize">Original: —</div>
+              <div class="stat" id="outSize">Output: —</div>
+              <div class="stat" id="ratio">Saved: —</div>
+            </div>
+            <div style="margin-left:auto">
+              <a id="downloadLink" class="btn small" style="display:none" download>Download</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="controls" aria-label="Background remover controls">
+          <div class="control-row">
+            <label for="format">Output</label>
+            <select id="format" class="format-select small" aria-label="Output format">
+              <option value="image/png">PNG (keep transparency)</option>
+              <option value="image/jpeg">JPEG (flatten to white)</option>
+            </select>
+          </div>
+
+          <div class="control-row">
+            <label for="keepAlpha">Keep alpha</label>
+            <input id="keepAlpha" type="checkbox" checked>
+            <label> if turned off, transparency will be filled with white</label>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:6px">
+            <button id="removeBtn" class="btn" disabled>Remove Background</button>
+            <button id="previewBtn" class="muted-btn">Preview</button>
+          </div>
+
+          <div style="margin-top:auto">
+            <div style="font-size:13px; color:#bfbfbf; margin-bottom:6px">Hints</div>
+            <ul style="color:#bfbfbf;margin:0 0 0 18px;padding:0;font-size:13px">
+              <li>Large images take longer; downscale for speed.</li>
+              <li>PNG preserves transparency.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="loading-overlay" class="loading hidden" aria-hidden="true">
+    <div class="spinner"></div>
+    <div class="loading-text">Processing — please wait...</div>
+  </div>
+  <script src="{{ url_for('static', filename='js/bg-remove.js') }}"></script>
+</body>
+</html>
+
