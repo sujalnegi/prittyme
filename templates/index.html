@@ -13,62 +13,56 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <aside class="sidebar" aria-label="Primary navigation">
-    <button class="logo-box" aria-label="Home" title="Home">
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-    </button> 
+<aside class="sidebar" aria-label="Primary navigation">
+  <a href="/" class="logo-box" aria-label="Home" title="Home">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+  </a>
 
-    <!-- spacer pushes links to the bottom -->
-    <div class="nav-spacer" aria-hidden="true"></div>
+  <div class="nav-spacer" aria-hidden="true"></div>
 
-    <!-- navigation (stacked, bottom-anchored) -->
-    <nav class="nav" aria-label="Secondary">
-      <!-- Background remove -->
-      <button class="nav-btn" aria-label="Background remove" title="Background remove">
-        <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
-      </button>
+  <nav class="nav" aria-label="Secondary">
 
-      <!-- Compress image (new) -->
-      <button class="nav-btn" aria-label="Compress image" title="Compress image">
-        <span class="material-icons-outlined" aria-hidden="true">compress</span>
-      </button>
+    <a href="/bg-remove" class="nav-btn" aria-label="Background remove" title="Background remove">
+      <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+    </a>
 
-      <!-- Resize -->
-      <button class="nav-btn" aria-label="Resize" title="Resize">
-        <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
-      </button>
+    <a href="/compress" class="nav-btn" aria-label="Compress image" title="Compress image">
+      <span class="material-icons-outlined" aria-hidden="true">compress</span>
+    </a>
 
-      <!-- About -->
-      <button class="nav-btn" aria-label="About" title="About">
-        <span class="material-icons-outlined" aria-hidden="true">info</span>
-      </button>
-    </nav>
-  </aside>
+    <a href="/resize" class="nav-btn" aria-label="Resize" title="Resize">
+      <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+    </a>
 
-  <!-- MAIN CONTENT -->
-  <!-- MAIN CONTENT -->
+    <a href="/about" class="nav-btn" aria-label="About" title="About">
+      <span class="material-icons-outlined" aria-hidden="true">info</span>
+    </a>
+
+  </nav>
+</aside>
+
 <main id="main" class="main-section" role="main">
 
   <div class="title-area">
     <h1 class="main-title">Transform Your Photos with AI</h1>
 
-    <!-- Logo under the title -->
+    <!-- Logo -->
     <img 
       src="https://github.com/sujalnegi/prittyme/blob/main/static/images/logo.png?raw=1" 
       alt="PrittyMe Logo" 
       class="title-logo"
     >
+<div class="title-description">
+  <b>Prityme</b> is your all-in-one AI powered, smart image editor which helps you to
+  <b>compress, resize, remove background, convert formats and add filters</b> to your photos.
+</div>
 
-    <!-- Description -->
-    <p class="title-description">
-      Prityme is your all-in-one AI powered, smart image editor which helps you to compress, resize, remove background, convert formats and add filters to your photos.
-    </p>
+  </div>
+  <div>
+
   </div>
 
 </main>
-
-
-  <!-- Keep mouse/key detection for focus styles -->
   <script>
     (function () {
       const body = document.body;
@@ -77,22 +71,7 @@
       window.addEventListener('mousedown', handleMouse);
       window.addEventListener('keydown', handleKey);
     })();
+
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-<body>
-<p>hackclub ysws</p>
-
-</body>
