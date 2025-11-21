@@ -1,226 +1,231 @@
 .compress-container {
-            max-width: 980px;
-            width: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-            padding: 28px;
-            border-radius: 18px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-            color: #e6e6e6;
-        }
+    max-width: 980px;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    color: #e6e6e6;
+    background-color: rgb(27, 27, 27);
 
-        .compress-container>div:first-child {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 18px;
-            padding: 0 8px;
-        }
+}
 
-        .compress-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            max-width: 780px;
-            margin: 0;
-        }
+.compress-container>div:first-child {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 0 8px;
+}
 
-        .compress-title {
-            margin: 0;
-            font-size: 64px;
-            line-height: 1.3;
-            font-weight: 800;
-            -webkit-font-smoothing: antialiased;
-            cursor: default;
-            background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 22px rgba(236, 72, 153, 0.12);
-            transform: translateY(-6px);
-            transition: transform .28s cubic-bezier(.2, .9, .2, 1), text-shadow .28s, color .28s;
-        }
+.compress-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    max-width: 780px;
+    margin: 0;
+}
 
-        .compress-title:hover {
-            transform: translateY(-12px) scale(1.02);
-            text-shadow: 0 0 28px rgba(236, 72, 153, 0.16);
-        }
+.compress-title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 1.3;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+    cursor: default;
+    /* background: linear-gradient(90deg, rgba(255, 255, 247, 1.000) 0.000%, rgba(255, 255, 165, 1.000) 16.667%, rgba(255, 122, 68, 1.000) 33.333%, rgba(153, 7, 8, 1.000) 50.000%, rgba(0, 0, 15, 1.000) 66.667%, rgba(0, 83, 85, 1.000) 83.333%, rgba(49, 226, 183, 1.000) 100.000%); */
 
-        .title-description {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 86px;
-            max-width: 720px;
-            padding: 12px 16px;
-            background: rgba(8, 8, 8, 0.55);
-            border-radius: 12px;
-            color: #d4d4d4;
-            font-size: 16px;
-            line-height: 1.4;
-            text-align: center;
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
-            pointer-events: none;
-        }
+    background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 22px rgba(236, 72, 153, 0.12);
+    transform: translateY(-6px);
+    transition: transform .28s cubic-bezier(.2, .9, .2, 1), text-shadow .28s, color .28s;
+}
 
-        .header-actions {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            margin-left: auto;
-        }
 
-        .compress-grid {
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 22px;
-            align-items: start;
-            margin-top: 36px;
-        }
+.compress-title:hover {
+    transform: translateY(-12px) scale(1.02);
+    text-shadow: 0 0 28px rgba(236, 72, 153, 0.16);
+}
 
-        .drop-area {
-            min-height: 360px;
-            border-radius: 12px;
-            border: 2px dashed rgba(255, 255, 255, 0.06);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.01);
-            position: relative;
-            overflow: hidden;
-        }
+.title-description {
+    position: static;
+    left: auto;
+    transform: none;
+    top: auto;
+    max-width: 720px;
+    padding: 10px 14px;
+    background: rgba(8, 8, 8, 0.35);
+    border-radius: 12px;
+    color: #d4d4d4;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+    pointer-events: auto;
+}
 
-        .drop-area.dragover {
-            border-color: rgba(99, 102, 241, 0.6);
-            transform: translateY(-4px);
-            transition: .16s;
-        }
+.header-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: auto;
+}
 
-        .drop-inner {
-            text-align: center;
-            padding: 18px;
-        }
+.compress-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
+    align-items: start;
+    margin-top: 36px;
+}
 
-        .controls {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+.drop-area {
+    min-height: 360px;
+    border-radius: 12px;
+    border: 2px dashed rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.01);
+    position: relative;
+    overflow: hidden;
+}
 
-        .control-row {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
+.drop-area.dragover {
+    border-color: rgba(99, 102, 241, 0.6);
+    transform: translateY(-4px);
+    transition: .16s;
+}
 
-        .control-row label {
-            min-width: 90px;
-            color: #bfbfbf;
-            font-size: 14px;
-        }
+.drop-inner {
+    text-align: center;
+    padding: 18px;
+}
 
-        .control-row input[type="range"] {
-            flex: 1;
-        }
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
 
-        .preview {
-            width: 100%;
-            max-height: 420px;
-            object-fit: contain;
-            border-radius: 15px;
-            background: #0b0b0b;
-        }
+.control-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
 
-        .meta {
-            color: #bdbdbd;
-            font-size: 13px;
-        }
+.control-row label {
+    min-width: 90px;
+    color: #bfbfbf;
+    font-size: 14px;
+}
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 14px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
-            color: white;
-        }
+.control-row input[type="range"] {
+    flex: 1;
+}
 
-        .muted-btn {
-            background: transparent;
-            color: #ddd;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
+.preview {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 15px;
+    background: #0b0b0b;
+}
 
-        .small {
-            padding: 8px 10px;
-            font-size: 14px;
-            border-radius: 8px;
-        }
+.meta {
+    color: #bdbdbd;
+    font-size: 13px;
+}
 
-        .stats {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-top: 8px;
-        }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
+    color: white;
+}
 
-        .stat {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 8px 10px;
-            border-radius: 8px;
-            color: #d0d0d0;
-            font-size: 13px;
-        }
+.muted-btn {
+    background: transparent;
+    color: #ddd;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
 
-        .format-select,
-        .file-input {
-            width: 100%;
-        }
+.small {
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+}
 
-        @media (max-width: 900px) {
-            .compress-grid {
-                grid-template-columns: 1fr;
-            }
+.stats {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
 
-            .drop-area {
-                min-height: 260px;
-            }
+.stat {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #d0d0d0;
+    font-size: 13px;
+}
 
-            .title-description {
-                top: 72px;
-                font-size: 15px;
-                padding: 10px 12px
-            }
+.format-select,
+.file-input {
+    width: 100%;
+}
 
-            .compress-title {
-                font-size: 40px
-            }
-        }
+@media (max-width: 900px) {
+    .compress-grid {
+        grid-template-columns: 1fr;
+    }
 
-        @media (max-width: 600px) {
-            .title-description {
-                position: static;
-                transform: none;
-                margin-top: 8px;
-                pointer-events: auto;
-                background: transparent;
-                box-shadow: none;
-                color: #bfbfbf;
-                padding: 0;
-            }
+    .drop-area {
+        min-height: 260px;
+    }
 
-            .compress-container>div:first-child {
-                flex-direction: column;
-                align-items: center;
-                gap: 8px;
-            }
+    .title-description {
+        top: 72px;
+        font-size: 15px;
+        padding: 10px 12px
+    }
 
-            .compress-grid {
-                margin-top: 12px;
-            }
-        }
+    .compress-title {
+        font-size: 40px
+    }
+}
+
+@media (max-width: 600px) {
+    .title-description {
+        position: static;
+        transform: none;
+        margin-top: 8px;
+        pointer-events: auto;
+        background: transparent;
+        box-shadow: none;
+        color: #bfbfbf;
+        padding: 0;
+    }
+
+    .compress-container>div:first-child {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .compress-grid {
+        margin-top: 12px;
+    }
+}
