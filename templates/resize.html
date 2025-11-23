@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>prityme - Resize</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Bree+Serif&family=Momo+Signature&family=Momo+Trust+Display&family=Playwrite+NZ+Guides&family=Titan+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/compress.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/resize.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a href="/" class="logo-box" aria-label="Home" title="Home">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    </a>
+    <div class="nav-spacer" aria-hidden="true"></div>
+    <nav class="nav" aria-label="Secondary">
+      <a href="/bg-remove" class="nav-btn" aria-label="Background remove" title="Background remove">
+        <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+      </a>
+      <a href="/compress" class="nav-btn" aria-label="Compress image" title="Compress image">
+        <span class="material-icons-outlined" aria-hidden="true">compress</span>
+      </a>
+      <a href="/resize" class="nav-btn" aria-label="Resize" title="Resize">
+        <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+      </a>
+      <a href="/about" class="nav-btn" aria-label="About" title="About">
+        <span class="material-icons-outlined" aria-hidden="true">info</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main-section" role="main">
+    <div class="compress-container">
+      <div>
+        <div class="compress-header">
+          <h2 class="compress-title">Image Resizer</h2>
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="resize logo" class="compress-logo" style="display:none">
+        </div>
+        <p class="title-description">Upload or drop an image, set width and height, pick a format & quality, then resize and download easily :></p>
+        <div class="header-actions">
+          <button id="reset" class="btn small" style="background-color: rgba(142, 58, 58);">Reset</button>
+        </div>
+      </div>
+
+      <div class="compress-grid">
+        <div>
+          <div id="drop" class="drop-area" tabindex="0" aria-label="Drop image here or click to choose">
+            <div class="drop-inner" id="dropInner">
+              <p style="margin:0 0 12px 0; color:#d0d0d0">Drop image here or</p>
+              <div style="display:flex;gap:8px;justify-content:center">
+                <label class="btn small" for="fileInput">Choose file</label>
+                <input id="fileInput" class="file-input" type="file" accept="image/*" style="display:none">
+                <span class="meta" id="dropHint">PNG, JPEG, WebP</span>
+              </div>
+            </div>
+            <img id="preview" class="preview" style="display:none" alt="Preview">
+          </div>
+
+          <div style="margin-top:12px; display:flex; gap:10px; align-items:center;">
+            <div class="stats">
+              <div class="stat" id="origSize">Original: —</div>
+              <div class="stat" id="outSize">Output: —</div>
+              <div class="stat" id="ratio">Saved: —</div>
+            </div>
+            <div style="margin-left:auto">
+              <a id="downloadLink" class="btn small" style="display:none" download>Download</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="controls" aria-label="Resize controls">
+          <div class="control-row">
+            <label for="format">Format</label>
+            <select id="format" class="format-select small" aria-label="Output format">
+              <option value="auto">Auto (keep original)</option>
+              <option value="image/jpeg">JPEG</option>
+              <option value="image/webp">WebP</option>
+              <option value="image/png">PNG (lossless)</option>
+            </select>
+          </div>
+
+          <div class="control-row">
+            <label for="scale">Scale (%)</label>
+            <input id="scale" type="range" min="1" max="400" value="100" step="1" aria-label="Scale">
+            <div style="width:44px; text-align:right; color:#bfbfbf" id="scaleVal">100</div>
+          </div>
+
+          <div class="control-row">
+            <label for="width">Width</label>
+            <input id="width" type="number" min="1" placeholder="Auto" aria-label="Width" style="width:120px; padding:8px; border-radius:8px; border:none; background:rgba(255,255,255,0.02); color:#ddd">
+          </div>
+
+          <div class="control-row">
+            <label for="height">Height</label>
+            <input id="height" type="number" min="1" placeholder="Auto" aria-label="Height" style="width:120px; padding:8px; border-radius:8px; border:none; background:rgba(255,255,255,0.02); color:#ddd">
+          </div>
+
+          <div class="control-row">
+            <label for="lockRatio">Lock ratio</label>
+            <input id="lockRatio" type="checkbox" aria-label="Lock aspect ratio" checked>
+            <label id="ratioLabel" style="color:#bfbfbf">Maintain aspect ratio</label>
+          </div>
+
+          <div class="control-row">
+            <label for="quality">Quality</label>
+            <input id="quality" type="range" min="10" max="100" value="90" step="1" aria-label="Quality">
+            <div style="width:44px; text-align:right; color:#bfbfbf" id="qualityVal">90</div>
+          </div>
+
+          <div style="display:flex; gap:8px; margin-top:6px">
+            <button id="resizeBtn" class="btn" style="background-color: rgb(47, 136, 66);">Resize</button>
+            <button id="previewBtn" class="muted-btn">Preview</button>
+          </div>
+
+          <div style="margin-top:12px">
+            <div style="color:#bfbfbf; font-size:13px; margin-bottom:6px">Preview size</div>
+            <div id="previewInfo" class="meta"></div>
+          </div>
+
+          <div style="margin-top:auto">
+            <div style="font-size:13px; color:#bfbfbf; margin-bottom:6px">Hints</div>
+            <ul style="color:#bfbfbf;margin:0 0 0 18px;padding:0;font-size:13px">
+              <li>Use Scale to quickly scale the image.</li>
+              <li>Set one dimension and lock ratio to auto-calc the other.</li>
+              <li>Quality affects JPEG/WebP only.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='js/resize.js') }}"></script>
+</body>
+</html>
+
+
