@@ -3,66 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>prityme-Home</title>
+  <title>prityme — Transform Your Photos</title>
+  <meta name="description" content="Prityme — AI powered image editor to compress, resize and remove backgrounds locally in the browser or on your server. Fast, private and easy to use." />
+  <link rel="canonical" href="/" />
+  <meta name="theme-color" content="#111827" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Bree+Serif&family=Momo+Signature&family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+NZ+Guides&family=Titan+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
   <a class="skip-link" href="#main">Skip to content</a>
 
-<aside class="sidebar" aria-label="Primary navigation">
-  <a href="/" class="logo-box" aria-label="Home" title="Home">
-    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
-  </a>
-
-  <div class="nav-spacer" aria-hidden="true"></div>
-
-  <nav class="nav" aria-label="Secondary">
-
-    <a href="/bg-remove" class="nav-btn" aria-label="Background remove" title="Background remove">
-      <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a href="/" class="logo-box" aria-label="Home" title="Home" aria-current="page">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Prityme logo" class="logo-img" loading="lazy">
     </a>
 
-    <a href="/compress" class="nav-btn" aria-label="Compress image" title="Compress image">
-      <span class="material-icons-outlined" aria-hidden="true">compress</span>
+    <div class="nav-spacer" aria-hidden="true"></div>
+
+    <nav class="nav" aria-label="Secondary">
+      <a href="/bg-remove" class="nav-btn" aria-label="Background remove" title="Background remove">
+        <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+      </a>
+
+      <a href="/compress" class="nav-btn" aria-label="Compress image" title="Compress image">
+        <span class="material-icons-outlined" aria-hidden="true">compress</span>
+      </a>
+
+      <a href="/resize" class="nav-btn" aria-label="Resize" title="Resize">
+        <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+      </a>
+
+      <a href="/about" class="nav-btn" aria-label="About" title="About">
+        <span class="material-icons-outlined" aria-hidden="true">info</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main-section" role="main">
+    <div class="title-area">
+      <h1 class="main-title"  >Transform Your Photos</h1>
+
+      <img 
+        src="https://github.com/sujalnegi/prittyme/blob/main/static/images/logo.png?raw=1" 
+        alt="Prittyme app icon" 
+        class="title-logo"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <div class="title-description glass-card" role="region" aria-label="App summary">
+        <b>Prityme</b> is your all-in-one smart image editor which helps you to
+        <b>compress, resize and remove background</b> from your photos.
+      </div>
+
+      <section class="features-section" aria-labelledby="features-heading">
+        <h2 id="features-heading" class="features-heading" style="font-family: 'Playfair Display', serif; font-size: 37px;">Features</h2>
+        <div class="features-grid" role="list">
+          <article role="listitem" class="feature-tile glass-card">
+            <div class="feature-top">
+              <span class="feature-icon material-icons-outlined" aria-hidden="true">layers_clear</span>
+              <h3 class="feature-title">Background Remover</h3>
+            </div>
+            <p class="feature-text">Remove backgrounds automatically using rembg python library. Works great for portraits and product shots while preserving hair and fine edges. No GPU required.</p>
+          </article>
+
+          <article role="listitem" class="feature-tile glass-card">
+            <div class="feature-top">
+              <span class="feature-icon material-icons-outlined" aria-hidden="true">compress</span>
+              <h3 class="feature-title">Image Compressor</h3>
+            </div>
+            <p class="feature-text">Choose format, quality and max width to reduce file size by re-encoding at a lower quality — perfect for web or sharing.</p>
+          </article>
+
+          <article role="listitem" class="feature-tile glass-card">
+            <div class="feature-top">
+              <span class="feature-icon material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+              <h3 class="feature-title">Image Resizer</h3>
+            </div>
+            <p class="feature-text">Resize by exact dimensions or scale percentage with aspect-ratio lock. Optionally constrain upscales to preserve quality. Uses Canvas API.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer aria-label="Site author" class="made-by-tile">
+    <a class="made-by-link" href="https://github.com/sujalnegi" target="_blank" rel="noopener noreferrer">
+      <span class="made-by-dot" aria-hidden="true"></span>
+      <span class="made-by-text">Made by Sujal Negi</span>
     </a>
+  </footer>
 
-    <a href="/resize" class="nav-btn" aria-label="Resize" title="Resize">
-      <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
-    </a>
-
-    <a href="/about" class="nav-btn" aria-label="About" title="About">
-      <span class="material-icons-outlined" aria-hidden="true">info</span>
-    </a>
-
-  </nav>
-</aside>
-
-<main id="main" class="main-section" role="main">
-
-  <div class="title-area">
-    <h1 class="main-title">Transform Your Photos with AI</h1>
-
-    <!-- Logo -->
-    <img 
-      src="https://github.com/sujalnegi/prittyme/blob/main/static/images/logo.png?raw=1" 
-      alt="PrittyMe Logo" 
-      class="title-logo"
-    >
-<div class="title-description">
-  <b>Prityme</b> is your all-in-one AI powered, smart image editor which helps you to
-  <b>compress, resize, remove background, convert formats and add filters</b> to your photos.
-</div>
-
-  </div>
-  <div>
-
-  </div>
-
-</main>
   <script>
     (function () {
       const body = document.body;
@@ -71,7 +109,7 @@
       window.addEventListener('mousedown', handleMouse);
       window.addEventListener('keydown', handleKey);
     })();
-
   </script>
+
 </body>
 </html>
