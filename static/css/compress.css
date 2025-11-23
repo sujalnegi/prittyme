@@ -40,7 +40,8 @@
 
     background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    
+    /* -webkit-text-fill-color: transparent; */
     text-shadow: 0 0 22px rgba(236, 72, 153, 0.12);
     transform: translateY(-6px);
     transition: transform .28s cubic-bezier(.2, .9, .2, 1), text-shadow .28s, color .28s;
@@ -151,20 +152,27 @@
     border: none;
     cursor: pointer;
     font-weight: 600;
-    background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
-    color: white;
+    background-color: blanchedalmond;
+    /* background: linear-gradient(90deg, var(--brand-from), var(--brand-to)); */
+    color: rgba(27, 27, 27);
+    font-family: "Bebas Neue", sans-serif;
 }
 
 .muted-btn {
-    background: transparent;
-    color: #ddd;
+    background: blanchedalmond;
+    font-family: "Bebas Neue", sans-serif;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    /* color: #ddd; */
     border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .small {
     padding: 8px 10px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 8px;
+    color:rgb(27, 27, 27);
 }
 
 .stats {
@@ -229,3 +237,7 @@
         margin-top: 12px;
     }
 }
+
+
+
+
