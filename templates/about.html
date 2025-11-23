@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>prityme - About</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Bree+Serif&family=Momo+Signature&family=Momo+Trust+Display&family=Playwrite+NZ+Guides&family=Titan+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="sidebar" aria-label="Primary navigation">
+    <a href="/" class="logo-box" aria-label="Home" title="Home">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-img">
+    </a>
+    <div class="nav-spacer" aria-hidden="true"></div>
+    <nav class="nav" aria-label="Secondary">
+      <a href="/bg-remove" class="nav-btn" aria-label="Background remove" title="Background remove">
+        <span class="material-icons-outlined" aria-hidden="true">layers_clear</span>
+      </a>
+      <a href="/compress" class="nav-btn" aria-label="Compress image" title="Compress image">
+        <span class="material-icons-outlined" aria-hidden="true">compress</span>
+      </a>
+      <a href="/resize" class="nav-btn" aria-label="Resize" title="Resize">
+        <span class="material-icons-outlined" aria-hidden="true">photo_size_select_large</span>
+      </a>
+      <a href="/about" class="nav-btn active" aria-label="About" title="About">
+        <span class="material-icons-outlined" aria-hidden="true">info</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main id="main" class="main-section" role="main">
+    <div class="compress-container about-container">
+      <div class="compress-header">
+        <h2 class="compress-title" style="color: black; font-weight: bold; font-family: 'Bebas Neue', sans-serif; font-size: 64px;">About Prityme</h2>
+        <p class="title-description glass-card">Prityme is an traditional image toolbox built to compress, resize, remove backgrounds, convert formats and apply quick edits — designed for speed, privacy and great visual results.</p>
+      </div>
+
+      <div class="about-grid">
+        <nav class="feature-nav" aria-label="Features list">
+          <ul>
+            <li><a href="#background-remover">Background Remover</a></li>
+            <li><a href="#compressor">Image Compressor</a></li>
+            <li><a href="#resizer">Image Resizer</a></li>
+            <li><a>more soon!</a></li>
+
+          </ul>
+        </nav>
+
+        <section class="feature-content" aria-live="polite">
+          <article id="background-remover" class="feature-card glass-card">
+            <div class="feature-header">
+              <span class="material-icons-outlined">layers_clear</span>
+              <h3 style="">Background Remover</h3>
+            </div>
+            <p>Remove backgrounds automatically using an AI-powered model. Works best for portraits and product shots. Keeps fine hair and translucent edges when possible and offers keep/remove masks for manual touch-ups.</p>
+          </article>
+
+          <article id="compressor" class="feature-card glass-card">
+            <div class="feature-header">
+              <span class="material-icons-outlined">compress</span>
+              <h3>Image Compressor</h3>
+            </div>
+            <p>Choose format (JPEG, WebP, PNG), adjust quality and max width to reduce file size while preserving visual fidelity. Instant preview and download make it ideal for web publishing and sharing.</p>
+          </article>
+
+          <article id="resizer" class="feature-card glass-card">
+            <div class="feature-header">
+              <span class="material-icons-outlined">photo_size_select_large</span>
+              <h3>Image Resizer</h3>
+            </div>
+            <p>Resize by exact dimensions or scale percentage. Toggle aspect-ratio lock to preserve proportions. Upscaling is optional; you can constrain to avoid enlarging smaller images.</p>
+          </article>
+
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div>
+  
+  </div>
+
+  <script>
+    document.querySelectorAll('.feature-nav a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + id);
+      });
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const link = document.querySelector('.feature-nav a[href="#' + id + '"]');
+        if (link) link.classList.toggle('active', entry.isIntersecting);
+      });
+    }, { root: null, threshold: 0.5 });
+    document.querySelectorAll('.feature-card').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
