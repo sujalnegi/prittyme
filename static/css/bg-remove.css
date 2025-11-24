@@ -5,7 +5,6 @@
   --brand-from: #6366f1;
   --brand-to: #ec4899;
   --focus: rgba(99, 102, 241, 0.18);
-  --local-img: url('/mnt/data/b71a24a1-915c-4345-82f4-1eb8e74291c7.png');
 }
 
 * {
@@ -67,7 +66,6 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url('/mnt/data/b71a24a1-915c-4345-82f4-1eb8e74291c7.png');
   background-size: cover;
   background-position: center;
   opacity: 0.06;
@@ -209,9 +207,10 @@ body:not(.using-mouse) .nav-btn:focus {
   font-weight: 800;
   -webkit-font-smoothing: antialiased;
   cursor: default;
-  background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
+  color: white;
+  /* background: linear-gradient(90deg, var(--brand-from), var(--brand-to)); */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
   text-shadow: 0 0 22px rgba(236, 72, 153, 0.12);
   transform: translateY(-6px);
   transition: transform .28s cubic-bezier(.2, .9, .2, 1), text-shadow .28s, color .28s
@@ -325,21 +324,24 @@ body:not(.using-mouse) .nav-btn:focus {
   border: none;
   cursor: pointer;
   font-weight: 600;
-  background: linear-gradient(90deg, var(--brand-from), var(--brand-to));
-  color: white;
-  z-index: 6
+  background-color: blanchedalmond;
+  /* background: linear-gradient(90deg, var(--brand-from), var(--brand-to)); */
+  color: rgb(27, 27, 27);
+  z-index: 6;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
 }
 
 .muted-btn {
   background: transparent;
   color: #ddd;
   border: 1px solid rgba(255, 255, 255, 0.04);
-  z-index: 6
+  z-index: 6;
 }
 
 .small {
   padding: 8px 10px;
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 8px
 }
 
@@ -402,7 +404,7 @@ body:not(.using-mouse) .nav-btn:focus {
   top: 10px;
   z-index: 10000;
   background: transparent;
-  padding: 6px 10px
+  padding: 6px 10px;
 }
 
 @media (max-width:900px) {
@@ -420,7 +422,8 @@ body:not(.using-mouse) .nav-btn:focus {
   }
 
   .compress-title {
-    font-size: 40px
+    font-size: 40px;
+    background-color: white;
   }
 
   .sidebar {
@@ -454,4 +457,3 @@ body:not(.using-mouse) .nav-btn:focus {
     margin-top: 12px
   }
 }
-
