@@ -4,6 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>prityme - Background Remover</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Bree+Serif&family=Momo+Signature&family=Momo+Trust+Display&family=Playwrite+NZ+Guides&family=Titan+One&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -37,13 +42,13 @@
     <div class="compress-container">
       <div>
         <div class="compress-header">
-          <h2 class="compress-title">AI Background Remover</h2>
+          <h2 class="compress-title">Background Remover</h2>
         </div>
 
         <p class="title-description">Upload or drop an image, select if you want to keep alpha or not, then click on Remove Background.</p>
 
         <div class="header-actions">
-          <button id="reset" class="btn small" disabled>Reset</button>
+          <button id="reset" class="btn small" disabled style="background-color: rgba(142, 58, 58);">Reset</button>
         </div>
       </div>
 
@@ -55,7 +60,7 @@
               <div style="display:flex;gap:8px;justify-content:center">
                 <label class="btn small" for="fileInput">Choose file</label>
                 <input id="fileInput" class="file-input" type="file" accept="image/*" style="display:none">
-                <span class="meta" id="dropHint">PNG, JPEG, WebP up to 15MB</span>
+                <span class="meta" id="dropHint">PNG, JPEG, WebP </span>
               </div>
             </div>
             <img id="preview" class="preview" style="display:none" alt="Preview">
@@ -89,7 +94,7 @@
           </div>
 
           <div style="display:flex; gap:8px; margin-top:6px">
-            <button id="removeBtn" class="btn" disabled>Remove Background</button>
+            <button id="removeBtn" class="btn" disabled style="background-color: rgb(47, 136, 66);">Remove Background</button>
             <button id="previewBtn" class="muted-btn">Preview</button>
           </div>
 
@@ -112,4 +117,6 @@
   <script src="{{ url_for('static', filename='js/bg-remove.js') }}"></script>
 </body>
 </html>
+
+
 
