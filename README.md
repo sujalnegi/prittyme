@@ -6,6 +6,20 @@
    
 **prityme is a utility tool for images. It helps user to resize, compress and remove background of images like objects, portraits and more.**
 
+  [![GitHub](https://img.shields.io/badge/GitHub-prittyme-blue?logo=github)](https://github.com/sujalnegi/prityme)
+  [![Axiom](https://img.shields.io/badge/Built%20for-Axiom%20YSWS-orange)](https://axiom.hackclub.com/)
+[![Hackatime](https://hackatime-badge.hackclub.com/U09FLTYE9FF/prityme)](https://hackatime-badge.hackclub.com/U09FLTYE9FF/prityme)
+
+</div>
+
+---
+
+<div align="center">
+  <a href="https://moonshot.hackclub.com" target="_blank">
+    <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/35ad2be8c916670f3e1ac63c1df04d76a4b337d1_moonshot.png" 
+         alt="This project is part of Moonshot, a 4-day hackathon in Florida visiting Kennedy Space Center and Universal Studios!" 
+         style="width: 80%;">
+  </a>
 </div>
 
 ---
@@ -26,7 +40,7 @@
 
 - adjust quality, alpha(transparency selection.)
 
--compression is handled entirely in browser
+- compression is handled entirely in browser
 
 3. Image Resizer
 
@@ -45,6 +59,10 @@
 ## Demo
 
 A demo video showcasing all features locally can be added [here](https://drive.google.com/file/d/1vq_gTDREQuPvYqK-P80bOUdwTuGIkflX/view?usp=drive_link)
+
+### Playable URL
+
+[Here](https://prityme.pythonanywhere.com/)
 
 ---
 
