@@ -1,5 +1,8 @@
 # prityme
+
 <div align="center">
+
+   <img src="static/images/logo.png" alt="FDMA Logo" width="200"/>
    
 **prityme is a utility tool for images. It helps user to resize, compress and remove background of images like objects, portraits and more.**
 
@@ -10,21 +13,38 @@
 ## Features
 
 1. Backgound Remover
+
 - Used Rembg python library(U²-Net model).
+
 - detects background automatically 
+
 - works best with objects & portraits
 
 2. Image Compressor
+
 - choose format jpg, png, webP.
-- adjust quality, alpha(transparency selection.)\
+
+- adjust quality, alpha(transparency selection.)
+
 -compression is handled entirely in browser
 
 3. Image Resizer
+
 - resize by:
+
     - exact height/weight
+    
     - or percentage
+
 - keeps the original aspect ratio
+
 - generates output using canvas
+
+---
+
+## Demo
+
+A demo video showcasing all features locally can be added [here](https://drive.google.com/file/d/1vq_gTDREQuPvYqK-P80bOUdwTuGIkflX/view?usp=drive_link)
 
 ---
 
@@ -32,7 +52,7 @@
 
 ### Backend
 
-- Python
+- Python v3.11
 
 - Flask
 
@@ -52,9 +72,7 @@
 
 - Glass UI components
 
-### Demo
 
-A demo video showcasing all features locally can be added [here]()
 
 ### Local Setup & Installation
 
@@ -110,15 +128,25 @@ Prityme should be on your browser now.
 ## How to Use
 
 1. Open the homepage and choose a feature (Compress / Resize / Background Remove).
+
 2. Upload or drag & drop an image
+
 3. Adjust settings
+
 4. Click on the green button
+
 5. Click on donwload and save the image or Preview to check first.
+
 6. Click on the red Reset button to work with another image.
+
+---
 
 ## Author
 
 Sujal Negi
 
 Email: [sujal1negi@gmail.com](mailto:sujal1negi@gmail.com)
+
 Instagram: @[__sujalnegi_ _](https://www.instagram.com/_sujalnegi_/)
+
+---
