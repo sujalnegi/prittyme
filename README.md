@@ -7,7 +7,7 @@
 **prityme is a utility tool for images. It helps user to resize, compress and remove background of images like objects, portraits and more.**
 
   [![GitHub](https://img.shields.io/badge/GitHub-prittyme-blue?logo=github)](https://github.com/sujalnegi/prityme)
-  [![Axiom](https://img.shields.io/badge/Built%20for-Axiom%20YSWS-orange)](https://axiom.hackclub.com/)
+  [![Axiom](https://img.shields.io/badge/Built%20for-Moonshot%20YSWS-orange)](https://moonshot.hackclub.com/)
 [![Hackatime](https://hackatime-badge.hackclub.com/U09FLTYE9FF/prityme)](https://hackatime-badge.hackclub.com/U09FLTYE9FF/prityme)
 
 </div>
